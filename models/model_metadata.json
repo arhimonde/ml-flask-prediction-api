@@ -1,0 +1,78 @@
+{
+  "model_name": "IoT_Sensor_Health_Classifier",
+  "version": "1.0.0",
+  "framework": "scikit-learn",
+  "features": [
+    "temperature",
+    "vibration",
+    "pressure",
+    "rotational_speed",
+    "voltage"
+  ],
+  "classes": [
+    "NORMAL",
+    "WARNING",
+    "CRITICAL"
+  ],
+  "accuracy": 0.9978,
+  "test_metrics": {
+    "NORMAL": {
+      "precision": 0.9966777408637874,
+      "recall": 1.0,
+      "f1-score": 0.9983361064891847,
+      "support": 300.0
+    },
+    "WARNING": {
+      "precision": 0.9966666666666667,
+      "recall": 0.9966666666666667,
+      "f1-score": 0.9966666666666667,
+      "support": 300.0
+    },
+    "CRITICAL": {
+      "precision": 1.0,
+      "recall": 0.9966666666666667,
+      "f1-score": 0.998330550918197,
+      "support": 300.0
+    },
+    "accuracy": 0.9977777777777778,
+    "macro avg": {
+      "precision": 0.9977814691768181,
+      "recall": 0.9977777777777778,
+      "f1-score": 0.9977777746913494,
+      "support": 900.0
+    },
+    "weighted avg": {
+      "precision": 0.997781469176818,
+      "recall": 0.9977777777777778,
+      "f1-score": 0.9977777746913494,
+      "support": 900.0
+    }
+  },
+  "input_schema": {
+    "temperature": {
+      "type": "float",
+      "unit": "\u00b0C",
+      "sample_normal": 65.2
+    },
+    "vibration": {
+      "type": "float",
+      "unit": "mm/s",
+      "sample_normal": 1.45
+    },
+    "pressure": {
+      "type": "float",
+      "unit": "bar",
+      "sample_normal": 4.05
+    },
+    "rotational_speed": {
+      "type": "float",
+      "unit": "RPM",
+      "sample_normal": 1805.0
+    },
+    "voltage": {
+      "type": "float",
+      "unit": "V",
+      "sample_normal": 230.1
+    }
+  }
+}

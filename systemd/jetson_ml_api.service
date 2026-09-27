@@ -1,0 +1,18 @@
+[Unit]
+Description=Jetson Edge ML Flask Prediction REST API
+After=network.target
+
+[Service]
+User=jetson
+WorkingDirectory=/home/jetson/ml_flask_prediction_api
+Environment="PATH=/home/jetson/miniforge3/bin:/usr/local/cuda/bin:/usr/bin:/bin"
+ExecStart=/home/jetson/miniforge3/bin/gunicorn --workers 2 --bind 0.0.0.0:5001 --timeout 60 app:app
+Restart=always
+RestartSec=5
+
+# Edge Resource Limits (Useful on Jetson Nano / Orin)
+CPUQuota=150%
+MemoryMax=1.5G
+
+[Install]
+WantedBy=multi-user.target
